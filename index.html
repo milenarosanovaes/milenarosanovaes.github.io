@@ -1,0 +1,1449 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfólio de Milena Rosa Novaes, Product Manager com 7 anos em produto e 10 em tecnologia: cases de IA, dados e pagamentos.">
+<meta property="og:title" content="Milena Rosa Novaes · Product Manager">
+<meta property="og:description" content="Cases de produto em IA, dados e pagamentos.">
+<meta property="og:image" content="img/milena-retrato.jpg">
+<title>Milena Rosa Novaes · Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark "instrument panel" — results read like meter readouts (energy meters, POS displays).
+   Oversized condensed numerals carry the page; body copy stays calm in a single reading column. */
+:root{
+  --bg:#100D13;
+  --surface:#18141D;
+  --surface-2:#211B27;
+  --ink:#F2EDF5;
+  --muted:#A69DB0;
+  --line:#2D2734;
+  --accent:#EA77A6;
+  --accent-ink:#1A0D14;
+  --accent-soft:#2F1B27;
+  --grid:rgba(234,119,166,.10);
+  --font-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --measure:66ch;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#F6F3F7; --surface:#FFFFFF; --surface-2:#EFEAF1; --ink:#1B1621; --muted:#5F5769;
+    --line:#DDD6E2; --accent:#A3275F; --accent-ink:#FFFFFF; --accent-soft:#F6E3EC; --grid:rgba(163,39,95,.08);
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#F6F3F7; --surface:#FFFFFF; --surface-2:#EFEAF1; --ink:#1B1621; --muted:#5F5769;
+  --line:#DDD6E2; --accent:#A3275F; --accent-ink:#FFFFFF; --accent-soft:#F6E3EC; --grid:rgba(163,39,95,.08);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.62;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,48px);padding-block:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{text-wrap:balance;margin:0}
+.label{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+
+/* ── Top bar + progress ── */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:21px;letter-spacing:.02em;text-transform:uppercase}
+.mark i{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.top nav{display:flex;gap:22px;flex-wrap:wrap}
+.top nav a{text-decoration:none;font-size:14.5px;color:var(--muted)}
+.top nav a:hover{color:var(--ink)}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0)}
+
+/* ── Hero ── */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:radial-gradient(var(--grid) 1.2px,transparent 1.2px);background-size:22px 22px;mask-image:linear-gradient(180deg,#000 55%,transparent)}
+.glow{position:absolute;z-index:-1;width:620px;height:620px;left:var(--x,70%);top:var(--y,30%);transform:translate(-50%,-50%);background:radial-gradient(circle,color-mix(in srgb,var(--accent) 26%,transparent),transparent 62%);pointer-events:none;transition:left .25s ease-out,top .25s ease-out}
+.hero .wrap{display:grid;gap:clamp(36px,5vw,56px);padding-block:clamp(48px,8vw,104px) clamp(40px,6vw,72px)}
+@media (min-width:980px){.hero .wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:end}}
+.hero-text{display:grid;gap:24px;min-width:0}
+.hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(48px,7.4vw,100px);line-height:.94;letter-spacing:-.035em}
+.hero h1 .hl{color:var(--accent);display:block}
+.hero p{margin:0;max-width:56ch;color:var(--muted);font-size:clamp(17px,1.5vw,19px)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 15px var(--font-body);padding:12px 20px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;cursor:pointer;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ink)}
+
+/* Meter panel */
+.panel{background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--line);border-radius:18px;padding:8px 22px;min-width:0}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:12px;border-bottom:1px dashed var(--line)}
+.live{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
+.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+.reading{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:end;padding-block:18px;border-bottom:1px solid var(--line);text-decoration:none}
+.reading:last-child{border-bottom:0}
+.reading .what{min-width:0}
+.reading .what b{display:block;font-weight:600;font-size:15.5px}
+.reading .what span{font-size:13.5px;color:var(--muted)}
+.readout{display:flex;align-items:baseline;gap:10px;font-family:var(--font-display);font-variant-numeric:tabular-nums;white-space:nowrap}
+.readout .from{font-size:clamp(24px,2.6vw,30px);font-weight:500;color:var(--muted);text-decoration:line-through;text-decoration-thickness:2px}
+.readout .to{font-size:clamp(40px,4.6vw,56px);font-weight:800;line-height:.9;color:var(--accent)}
+.readout .arr{font-family:var(--font-mono);font-size:15px;color:var(--muted)}
+.reading:hover .to{text-shadow:0 0 18px color-mix(in srgb,var(--accent) 55%,transparent)}
+
+/* Ticker */
+.ticker{border-bottom:1px solid var(--line);overflow:hidden;background:var(--surface)}
+.ticker ul{list-style:none;margin:0;padding:14px 0;display:flex;gap:44px;width:max-content;animation:tick 38s linear infinite}
+.ticker li{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:.04em;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:44px}
+.ticker li::after{content:"✦";color:var(--accent);font-size:13px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ── Sections ── */
+section.block{padding-block:clamp(64px,9vw,120px) 0}
+.block-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.block-head h2{font-family:var(--font-display);font-weight:800;font-size:clamp(44px,6.4vw,84px);line-height:.9}
+
+/* Case index rows */
+.index{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:10px 32px;padding:26px 8px;border-bottom:1px solid var(--line);text-decoration:none;position:relative;transition:background .2s ease,padding .2s ease}
+@media (min-width:820px){.row{grid-template-columns:230px minmax(0,1fr) 48px;align-items:center}}
+.row:hover{background:var(--accent-soft);padding-inline:20px}
+.row .big{font-family:var(--font-display);font-weight:800;font-size:clamp(52px,6vw,76px);line-height:.85;color:var(--accent);font-variant-numeric:tabular-nums}
+.row .big small{display:block;font-family:var(--font-mono);font-weight:400;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.row .main{display:grid;gap:6px;min-width:0}
+.row h3{font-family:var(--font-display);font-weight:700;font-size:clamp(26px,2.8vw,34px);line-height:1}
+.row p{margin:0;color:var(--muted);font-size:15.5px;max-width:62ch}
+.row .go{font-family:var(--font-mono);font-size:24px;color:var(--muted);transition:transform .2s ease,color .2s ease;justify-self:end}
+.row:hover .go{transform:translateX(6px);color:var(--accent)}
+@media (max-width:819px){.row .go{display:none}}
+
+/* ── Case pages ── */
+.case{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;padding-top:28px;border-top:1px solid var(--ink)}
+@media (min-width:980px){.case{grid-template-columns:250px minmax(0,1fr);gap:72px}}
+.facts{display:grid;gap:18px;align-content:start}
+@media (min-width:980px){.facts{position:sticky;top:calc(env(safe-area-inset-top,0px) + 86px)}}
+.facts>.label{color:var(--accent)}
+.facts dl{margin:0;display:grid;gap:14px}
+.facts dt{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:3px 0 0;font-size:15px}
+.story{min-width:0;max-width:72ch}
+.story h2{font-family:var(--font-display);font-weight:800;font-size:clamp(38px,5vw,64px);line-height:.92;margin-bottom:22px}
+.story .headline-results{font-family:var(--font-mono);font-size:14.5px;line-height:1.9;color:var(--ink);margin:0 0 40px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0}
+.story h3{font-family:var(--font-display);font-weight:700;font-size:26px;letter-spacing:.01em;margin:48px 0 12px;display:flex;align-items:center;gap:12px}
+.story h3::before{content:"";width:18px;height:2px;background:var(--accent)}
+.story p{margin:0 0 14px}
+.story ul,.story ol{margin:0 0 14px;padding-left:1.25em;display:grid;gap:10px}
+.story li::marker{color:var(--accent);font-family:var(--font-mono)}
+.story ol>li b{display:block}
+.story a{color:var(--accent)}
+.split{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.split>div{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.split p{margin:8px 0 0;font-size:15.5px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0 8px;font-size:14px}
+.flow span{padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-family:var(--font-mono);font-size:12.5px}
+.flow i{font-style:normal;color:var(--accent);font-family:var(--font-mono)}
+.lesson{border-left:2px solid var(--accent);padding-left:16px;margin:0 0 16px}
+.lesson b{display:block}
+
+/* Before/after figures */
+.counter{margin:28px 0 8px;padding:26px;background:var(--surface);border:1px solid var(--line);border-radius:18px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:16px;align-items:center}
+.counter .side{display:grid;gap:12px;justify-items:center;text-align:center;min-width:0}
+.counter .cap{font-size:14px;color:var(--muted);max-width:28ch}
+.arrow-big{font-family:var(--font-display);font-weight:800;font-size:40px;color:var(--accent)}
+.pos-row{display:flex;gap:10px;justify-content:center;align-items:flex-end;min-height:96px}
+.pos{width:46px;height:auto}
+.pos.one{width:58px}
+.pos .body{fill:var(--surface-2);stroke:var(--muted);stroke-width:2}
+.pos .screen{fill:var(--line)}
+.pos .keys{fill:var(--muted)}
+.pos.one .body{stroke:var(--accent)}
+.pos.one .screen{fill:var(--accent-soft)}
+.pos.one .keys{fill:var(--accent)}
+.docs{display:flex;gap:6px;justify-content:center;align-items:flex-end;min-height:96px;padding-bottom:4px}
+.docs svg{width:26px;height:auto}
+.docs .doc{fill:var(--surface-2);stroke:var(--muted);stroke-width:1.6;stroke-linejoin:round}
+.docs .ln{stroke:var(--line);stroke-width:1.6;stroke-linecap:round;fill:none}
+.waffle{display:grid;grid-template-columns:repeat(10,12px);gap:3px;justify-content:center}
+.waffle i{display:block;width:12px;height:12px;border-radius:2px;background:var(--accent)}
+.waffle i.m{background:transparent;box-shadow:inset 0 0 0 1.5px var(--line)}
+.k-auto{color:var(--accent);font-weight:400}
+.k-man{color:var(--muted);font-weight:400}
+@media (max-width:560px){.counter{grid-template-columns:minmax(0,1fr)}.arrow-big{justify-self:center;transform:rotate(90deg)}}
+
+/* Photos */
+.photo{margin:22px 0 8px;display:grid;gap:8px;min-width:0}
+.photo img{display:block;width:100%;height:auto;max-width:100%;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+.photo figcaption{font-size:13.5px;color:var(--muted)}
+.photo-pair{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));align-items:start}
+.photo-pair .photo{margin:0}
+.photo-pair img{aspect-ratio:4/5;object-fit:cover}
+
+/* Other projects */
+.cases{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.case-card{display:flex;flex-direction:column;gap:16px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:18px;min-width:0}
+.case-card .meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.case-card h3{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1}
+.outcome{display:grid;gap:6px;padding:16px 18px;border-radius:12px;background:var(--accent-soft)}
+.outcome .o-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.outcome .o-big{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,3.2vw,38px);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.outcome .o-big i{font-style:normal;color:var(--accent)}
+.outcome .o-sub{font-size:14px;color:var(--ink);line-height:1.45}
+.brief{margin:0;display:grid;gap:12px}
+.brief dt{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.brief dd{margin:3px 0 0;font-size:14.5px;color:var(--muted);line-height:1.55}
+
+/* About */
+.about{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.about>div{min-width:0}
+.about p{margin:0 0 14px;max-width:var(--measure)}
+.portrait{width:clamp(120px,15vw,168px);aspect-ratio:1;max-width:100%;height:auto;border-radius:50%;object-fit:cover;border:2px solid var(--accent);margin-bottom:22px}
+.about-side{display:grid;gap:30px;min-width:0}
+.about-side>div{display:grid;gap:10px}
+.timeline{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--line)}
+.timeline li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding-block:12px;border-bottom:1px solid var(--line);font-size:15px}
+.timeline .yr{font-family:var(--font-mono);font-size:12.5px;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:3px}
+@media (max-width:640px){.timeline li{grid-template-columns:minmax(0,1fr);gap:2px}}
+
+/* ── Contact finale ── */
+.finale{margin-top:clamp(80px,10vw,140px);border-top:1px solid var(--line);position:relative;overflow:hidden;isolation:isolate}
+.finale::before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(var(--grid) 1.2px,transparent 1.2px);background-size:22px 22px;mask-image:linear-gradient(0deg,#000 30%,transparent)}
+.finale .wrap{display:grid;gap:26px;padding-block:clamp(56px,8vw,104px)}
+.finale h2{font-family:var(--font-display);font-weight:800;font-size:clamp(46px,8vw,104px);line-height:.88;max-width:14ch}
+.finale h2 em{font-style:normal;color:var(--accent)}
+.email-chip{display:inline-flex;align-items:center;max-width:100%;min-width:0;justify-self:start;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.email-chip:hover{border-color:var(--muted)}
+.email-chip .addr{font-family:var(--font-mono);font-size:clamp(14px,1.6vw,16px);color:var(--ink);padding:12px 4px 12px 20px;user-select:all;overflow-wrap:anywhere;min-width:0}
+.copy{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-right:3px;border:0;border-radius:50%;background:transparent;color:var(--muted);cursor:pointer;flex:none;padding:0}
+.copy:hover{color:var(--accent);background:var(--accent-soft)}
+.copy svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.copy .i-check{display:none}
+.email-chip.done{border-color:var(--accent)}
+.email-chip.done .copy{color:var(--accent)}
+.email-chip.done .i-copy{display:none}
+.email-chip.done .i-check{display:block}
+.copy-status{font-size:13.5px;color:var(--accent);min-height:1.4em}
+.foot{border-top:1px solid var(--line)}
+.foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px 34px;color:var(--muted);font-size:13.5px}
+
+@media (max-width:640px){
+  .mark{font-size:18px}
+  .top nav{gap:16px}
+  .top .top-right nav a[href="#outros"],.top .top-right nav a[href="#sobre"]{display:none}
+  .reading{grid-template-columns:minmax(0,1fr)}
+  .readout{justify-self:start}
+}
+.story h2{font-size:clamp(34px,4.4vw,56px)}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .ticker ul{animation:none;flex-wrap:wrap;width:auto;padding-inline:16px;gap:12px 28px}
+  .ticker li[aria-hidden="true"]{display:none}
+  .live::before{animation:none}
+  .glow{transition:none}
+  .row,.row .go,.btn{transition:none}
+}
+
+.about .label{display:block;margin-bottom:10px;color:var(--accent)}
+
+/* Bricolage tuning */
+.block-head h2,.finale h2,.story h2,.row h3,.case-card h3{letter-spacing:-.025em}
+.block-head h2{font-size:clamp(40px,5.6vw,72px);line-height:.95}
+.finale h2{font-size:clamp(40px,6.6vw,88px);line-height:.95}
+.story h2{line-height:1.02}
+.story h3{font-size:24px;letter-spacing:-.01em}
+.row h3{font-size:clamp(24px,2.5vw,30px);line-height:1.08}
+.case-card h3{font-size:25px;line-height:1.08}
+.ticker li{font-size:19px;letter-spacing:-.01em}
+.mark{font-size:19px;letter-spacing:-.01em}
+.row .big{letter-spacing:-.03em}
+.readout .to{letter-spacing:-.03em}
+.outcome .o-big{letter-spacing:-.02em}
+.finale .mail .addr{letter-spacing:-.02em}
+
+/* Language toggle */
+.top-right{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:flex-end}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.lang button{font:600 12px var(--font-mono);letter-spacing:.08em;padding:5px 10px;border:0;border-radius:999px;background:transparent;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]:hover{color:var(--accent-ink)}
+@media (max-width:640px){
+  .top-right{gap:12px}
+  .top .top-right nav a[href="#outros-en"],.top .top-right nav a[href="#sobre-en"]{display:none}
+}
+[hidden]{display:none!important}
+@media (max-width:640px){
+  .top .top-right nav{display:none!important}
+  .mark{font-size:17px;white-space:nowrap}
+}
+
+/* Theme toggle */
+.theme{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;padding:0}
+.theme:hover{color:var(--accent);border-color:var(--accent)}
+.theme svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.theme .i-moon{display:none}
+.theme.is-light .i-sun{display:none}
+.theme.is-light .i-moon{display:block}
+.contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.contact-row .btn{padding-block:13px}
+.finale .copy-status{margin-top:-14px}
+.story ul.headline-results{list-style:none;padding:14px 18px;display:grid;gap:6px}
+.story ul.headline-results li{position:relative;padding-left:18px}
+.story ul.headline-results li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:2px;background:var(--accent)}
+
+/* Mobile menu */
+.menu-btn{display:none;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;padding:0}
+.menu-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round}
+.menu-btn .i-close{display:none}
+.menu-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent)}
+.menu-btn[aria-expanded="true"] .i-open{display:none}
+.menu-btn[aria-expanded="true"] .i-close{display:block}
+.mobile-menu{border-top:1px solid var(--line);background:var(--bg)}
+.mnav{display:grid;padding:6px clamp(16px,4vw,48px) 14px}
+.top .mnav a{display:block;padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:22px;letter-spacing:-.02em;color:var(--ink)}
+.top .mnav a:last-child{border-bottom:0}
+.top .mnav a:hover,.top .mnav a:focus-visible{color:var(--accent)}
+@media (max-width:640px){
+  .menu-btn{display:inline-flex}
+  .top .wrap{gap:10px}
+  .top-right{flex-wrap:nowrap;gap:8px}
+  .mark{font-size:16px}
+}
+.top .mnav{display:grid;gap:0;flex-wrap:nowrap}
+.top .mnav[hidden]{display:none}
+@media (min-width:641px){.mobile-menu{display:none!important}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#inicio"><i aria-hidden="true"></i>Milena Rosa Novaes</a>
+    <div class="top-right">
+    <nav aria-label="Seções" data-lang="pt">
+      <a href="#cases">Cases</a>
+      <a href="#outros">Outros produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <nav aria-label="Sections" data-lang="en" hidden>
+      <a href="#cases-en">Cases</a>
+      <a href="#outros-en">Other products</a>
+      <a href="#sobre-en">About</a>
+      <a href="#contato-en">Contact</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu / Open menu">
+      <svg class="i-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-set="pt" aria-pressed="true">PT</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Alternar tema claro e escuro / Toggle light and dark theme" title="Tema claro / escuro">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mnav" aria-label="Seções" data-lang="pt">
+      <a href="#cases">Cases</a>
+      <a href="#outros">Outros produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <nav class="mnav" aria-label="Sections" data-lang="en" hidden>
+      <a href="#cases-en">Cases</a>
+      <a href="#outros-en">Other products</a>
+      <a href="#sobre-en">About</a>
+      <a href="#contato-en">Contact</a>
+    </nav>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<div class="lang-root" data-lang="pt">
+<main id="inicio">
+  <section class="hero" id="hero">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="label">Product Manager · Curitiba, Brasil</span>
+        <h1>Produtos que mudam <span class="hl">o número.</span></h1>
+        <p>Sou Product Manager há 7 anos, com 10 em tecnologia. Construo produtos digitais em fintech, energia e governo, em contextos B2B e B2C, do discovery às métricas em produção, com a tecnologia que o problema pede: integrações, dados ou IA.</p>
+        <div class="actions">
+          <a class="btn" href="#cases">Ver cases <span aria-hidden="true">↓</span></a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/milena-rnovaes/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="panel" aria-label="Resultados em destaque">
+        <div class="panel-head"><span class="label">Leituras de impacto</span><span class="live">antes → depois</span></div>
+        <a class="reading" href="#validacao">
+          <span class="what"><b>Validação de contratos com IA</b><span>Retorno ao cliente</span></span>
+          <span class="readout"><span class="from">24 h</span><span class="arr">→</span><span class="to"><span class="num" data-from="24" data-to="1">1</span> h</span></span>
+        </a>
+        <a class="reading" href="#destaxa">
+          <span class="what"><b>Orquestração de pagamentos</b><span>Maquininhas no balcão</span></span>
+          <span class="readout"><span class="from">3</span><span class="arr">→</span><span class="to"><span class="num" data-from="3" data-to="1">1</span></span></span>
+        </a>
+        <a class="reading" href="#inspecoes">
+          <span class="what"><b>Inspeções com Machine Learning</b><span>Assertividade em campo</span></span>
+          <span class="readout"><span class="from">~7%</span><span class="arr">→</span><span class="to">~<span class="num" data-from="7" data-to="14">14</span>%</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="wrap">
+    <section class="block" id="cases">
+      <div class="block-head">
+        <h2>Cases</h2>
+        <span class="label">3 projetos · 2022 – 2026</span>
+      </div>
+      <nav class="index" aria-label="Lista de cases">
+        <a class="row" href="#validacao">
+          <span class="big">~92%<small>validado sem intervenção</small></span>
+          <span class="main"><span class="label">Energia · IA</span><h3>Validação de contratos com IA</h3><p>LLM e motor de regras validam os contratos de parceiros comerciais antes da cobrança, com uma pessoa revisando só as exceções.</p></span>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+        <a class="row" href="#destaxa">
+          <span class="big">3 → 1<small>maquininhas no balcão</small></span>
+          <span class="main"><span class="label">Fintech · Pagamentos</span><h3>O comerciante sempre na menor taxa</h3><p>Orquestração de pagamentos que direciona cada venda para a adquirente mais barata, com conciliação para o cliente ver a economia.</p></span>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+        <a class="row" href="#inspecoes">
+          <span class="big">2x<small>mais acertos em campo</small></span>
+          <span class="main"><span class="label">Energia · Machine Learning</span><h3>Inspeções que viraram receita</h3><p>Um modelo de Machine Learning passou a indicar onde a equipe de campo deve ir, no lugar de uma triagem manual pelo sistema e pelo mapa.</p></span>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      </nav>
+    </section>
+
+    <section class="block" id="validacao" aria-labelledby="validacao-title">
+      <div class="case">
+        <aside class="facts">
+          <span class="label">Case · Validação de contratos</span>
+          <dl>
+            <div><dt>Empresa</dt><dd>Copel, companhia de energia do Paraná (via Stefanini)</dd></div>
+            <div><dt>Meu papel</dt><dd>Product Manager, da concepção à evolução contínua</dd></div>
+            <div><dt>Período</dt><dd>2026 – hoje</dd></div>
+            <div><dt>Com quem</dt><dd>Engenharia de dados e IA, áreas de negócio e parceiros comerciais</dd></div>
+            <div><dt>Tecnologia</dt><dd>LLM para extração, motor de regras, integração com o cadastro de clientes</dd></div>
+            <div><dt>Métrica de sucesso</dt><dd>% de casos validados sem intervenção humana e tempo de retorno ao cliente</dd></div>
+          </dl>
+        </aside>
+
+        <article class="story">
+          <h2 id="validacao-title">Validação de contratos com IA: 92% automático e retorno em 1 hora</h2>
+          <ul class="headline-results"><li>~92% dos casos validados sem intervenção humana</li><li>retorno de 24 h para 1 h</li><li>5.000 documentos em 30 min</li><li>-80% de custo frente ao processo manual</li></ul>
+
+          <h3>Contexto</h3>
+          <p>Parceiros comerciais vendem produtos a clientes da companhia. A cada acordo fechado, o parceiro envia um conjunto probatório: o contrato e as evidências, como a fatura do cliente. A cobrança ao cliente final só pode ser gerada se tudo estiver de acordo com as regras de negócio.</p>
+
+          <h3>O problema</h3>
+          <div class="split">
+            <div><span class="label">Prazo e erro</span><p>A validação era manual, com prazo de 24 horas para retornar ao cliente. Uma pessoa analisava cerca de 5 documentos a cada 20 minutos, e a análise manual deixava passar erros.</p></div>
+            <div><span class="label">Custo</span><p>A alternativa em estudo era contratar uma empresa terceira, que cobraria por cliente analisado. Com o volume das parcerias crescendo, nenhuma das duas opções escalava.</p></div>
+          </div>
+          <figure class="counter" aria-label="Antes: um analista validava cerca de 5 documentos a cada 20 minutos, com retorno em até 24 horas. Depois: de cada 100 casos, cerca de 92 são validados automaticamente e 8 vão para análise humana, com retorno em cerca de 1 hora.">
+            <div class="side">
+              <span class="label">Antes</span>
+              <div class="docs" aria-hidden="true">
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+              </div>
+              <span class="cap">5 documentos a cada 20 min por analista · retorno em até 24 h</span>
+            </div>
+            <span class="arrow-big" aria-hidden="true">→</span>
+            <div class="side">
+              <span class="label">Com a plataforma</span>
+              <div class="waffle" data-on="92" aria-hidden="true"></div>
+              <span class="cap"><b class="k-auto">■</b> ~92 de cada 100 validados automaticamente · <b class="k-man">□</b> ~8 com revisão humana · retorno em ~1 h</span>
+            </div>
+          </figure>
+
+          <h3>Meu papel</h3>
+          <p>Fui responsável pelo produto de ponta a ponta: concepção, roadmap, documentação e critérios de aceite, alinhamento com o time técnico e acompanhamento do uso com as áreas de negócio. É um produto em evolução contínua, não um projeto com data para acabar.</p>
+
+          <h3>Discovery</h3>
+          <ul>
+            <li>Mapeamos o processo manual com técnicas de fluxo, anotando cada gargalo e cada regra de negócio aplicada pelos analistas.</li>
+            <li>Definimos as regras de validação junto com os stakeholders do negócio, incluindo o DPO, para garantir a conformidade com a LGPD desde o início.</li>
+            <li>Com o mapa pronto, dividimos o escopo em entregas de valor, para colocar algo em produção cedo e evoluir a partir do uso real.</li>
+            <li>A descoberta menos óbvia: boa parte das divergências nascia antes da validação, em <b>erros de digitação nos contratos</b> feitos na ponta do parceiro. O produto precisava pegar esses erros, e não só conferir regras.</li>
+          </ul>
+
+          <h3>A solução</h3>
+          <div class="flow" aria-label="Fluxo da validação">
+            <span>Conjunto probatório</span><i>→</i>
+            <span>LLM extrai os dados</span><i>→</i>
+            <span>Motor de regras + cadastro</span><i>→</i>
+            <span>Aprovado ou análise humana</span><i>→</i>
+            <span>Cobrança conciliada</span>
+          </div>
+          <p>Um LLM lê os documentos e extrai as informações. Um motor de regras compara esses dados com as regras de negócio e com o cadastro de clientes da companhia. O que passa é aprovado para cobrança, e o que tem divergência vai para uma pessoa analisar. Depois, o módulo de conciliação confere se o que foi cobrado corresponde ao que foi pedido, e um dashboard acompanha os principais indicadores e a evolução de cada parceria.</p>
+
+          <h3>Decisões e trade-offs</h3>
+          <ol>
+            <li><b>Entregar em fases, cada uma em produção.</b> Primeiro a extração e a análise das regras, que resolviam a dor principal. Depois o dashboard, para acompanhar os resultados. Em seguida a validação dupla com o cadastro de clientes e, por fim, a conciliação entre pedido e cobrança.</li>
+            <li><b>Escolher a extração por dados, não por preferência.</b> Testamos diferentes sistemas de extração com documentos reais e ficamos com o de menor taxa de erro. A conferência da extração foi feita por pessoas, comparando o que o modelo leu com o documento original.</li>
+            <li><b>Validar em produção antes de investir no visual.</b> A primeira interface foi feita em Streamlit, para testar hipóteses com usuários reais rapidamente. A migração para React, dentro do design system da companhia, veio só depois de o produto provar valor.</li>
+            <li><b>Precisão antes de automação total.</b> As regras são a parte mais difícil, porque definem quanto do volume a IA resolve sozinha e quanto vai para uma pessoa. A premissa foi que nada errado pode ser aprovado: na dúvida, o caso vai para análise humana, mesmo que isso reduza a taxa de automação.</li>
+          </ol>
+
+          <h3>Resultados</h3>
+          <ul>
+            <li><b>~92% dos casos validados automaticamente</b>; só cerca de 8% seguem para análise humana</li>
+            <li>Retorno ao cliente de até 24 horas para cerca de 1 hora</li>
+            <li>5.000 documentos analisados em 30 minutos, contra cerca de 5 a cada 20 minutos por analista</li>
+            <li>Custo por análise cerca de 99% menor que o da terceirização em estudo</li>
+            <li>-80% de custo em relação ao processo manual</li>
+            <li>Validação dupla com o cadastro de clientes e conciliação de tudo o que vai para cobrança</li>
+            <li>Em operação com dois parceiros, processando centenas de contratos por dia</li>
+          </ul>
+
+          <h3>Aprendizados</h3>
+          <p class="lesson"><b>Em automação, a regra é o produto.</b> O modelo extrai os dados, mas são as regras que decidem o que é aprovado, o que vai para uma pessoa e quanto risco a empresa aceita.</p>
+          <p class="lesson"><b>O erro começa antes do processo.</b> Mapear o fluxo inteiro mostrou que muitas divergências vinham da digitação na ponta do parceiro, fora do nosso sistema.</p>
+          <p class="lesson"><b>Produção antes de polimento.</b> Começar com uma interface simples colocou o produto nas mãos dos usuários mais cedo, e o que aprendemos ali orientou o investimento no front definitivo.</p>
+          <p><a href="#cases">← Voltar aos cases</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="destaxa" aria-labelledby="destaxa-title">
+      <div class="case">
+        <aside class="facts">
+          <span class="label">Case · Destaxa</span>
+          <dl>
+            <div><dt>Empresa</dt><dd>Destaxa, fintech de meios de pagamento</dd></div>
+            <div><dt>Meu papel</dt><dd>Product Owner · Coordenadora de Integração</dd></div>
+            <div><dt>Período</dt><dd>2022 – 2024</dd></div>
+            <div><dt>Com quem</dt><dd>Adquirentes, bancos, automação comercial, Suporte e CS</dd></div>
+            <div><dt>Tecnologia</dt><dd>Integração via APIs com adquirentes e sistemas de PDV, roteamento por regras e depois por IA, conciliação bancária</dd></div>
+            <div><dt>Métrica de sucesso</dt><dd>Novos clientes por mês e churn</dd></div>
+          </dl>
+        </aside>
+
+        <article class="story">
+          <h2 id="destaxa-title">Orquestração de pagamentos: o comerciante sempre na menor taxa</h2>
+          <ul class="headline-results"><li>+300 novos clientes/mês</li><li>-20% de churn</li><li>de 3 maquininhas para 1</li><li>venda no caixa de 5 para 2 min</li></ul>
+
+          <h3>Contexto</h3>
+          <p>No mercado de maquininhas, o comerciante negocia taxas diferentes com cada adquirente (Cielo, Rede, Stone), conforme a bandeira do cartão e o segmento do estabelecimento (CNAE). Para não perder margem, ele precisaria comparar adquirentes o tempo todo. Na prática, acabava pagando mais do que precisava. Era um mercado anterior à popularização do Pix, com o cartão ainda dominante.</p>
+          <p>A Destaxa nasceu em 2021 para orquestrar pagamentos: uma única solução conectada a várias adquirentes, que direciona cada venda para a de menor custo. Era uma proposta ainda pouco explorada no Brasil.</p>
+
+          <h3>O problema</h3>
+          <div class="split">
+            <div><span class="label">Para o comerciante</span><p>Para pagar menos, muitos mantinham até 3 maquininhas no balcão, uma por adquirente, e o operador escolhia qual usar conforme a bandeira do cartão. Mais equipamentos, mais mensalidades, venda mais lenta e nenhuma certeza de que cada venda chegou ao banco corretamente.</p></div>
+            <div><span class="label">Para o negócio</span><p>Cada nova adquirente e cada sistema de frente de caixa exigia integração e homologação. Esse era o gargalo do crescimento.</p></div>
+          </div>
+          <figure class="counter" aria-label="Antes: três maquininhas, uma por adquirente. Depois: uma só, que escolhe a adquirente de menor custo.">
+            <div class="side">
+              <span class="label">Antes</span>
+              <div class="pos-row">
+                <svg class="pos" viewBox="0 0 60 96" aria-hidden="true"><rect x="2" y="2" width="56" height="92" rx="10" class="body"/><rect x="10" y="10" width="40" height="26" rx="3" class="screen"/><g class="keys"><circle cx="18" cy="50" r="3.5"/><circle cx="30" cy="50" r="3.5"/><circle cx="42" cy="50" r="3.5"/><circle cx="18" cy="62" r="3.5"/><circle cx="30" cy="62" r="3.5"/><circle cx="42" cy="62" r="3.5"/><circle cx="18" cy="74" r="3.5"/><circle cx="30" cy="74" r="3.5"/><circle cx="42" cy="74" r="3.5"/></g></svg>
+                <svg class="pos" viewBox="0 0 60 96" aria-hidden="true"><rect x="2" y="2" width="56" height="92" rx="10" class="body"/><rect x="10" y="10" width="40" height="26" rx="3" class="screen"/><g class="keys"><circle cx="18" cy="50" r="3.5"/><circle cx="30" cy="50" r="3.5"/><circle cx="42" cy="50" r="3.5"/><circle cx="18" cy="62" r="3.5"/><circle cx="30" cy="62" r="3.5"/><circle cx="42" cy="62" r="3.5"/><circle cx="18" cy="74" r="3.5"/><circle cx="30" cy="74" r="3.5"/><circle cx="42" cy="74" r="3.5"/></g></svg>
+                <svg class="pos" viewBox="0 0 60 96" aria-hidden="true"><rect x="2" y="2" width="56" height="92" rx="10" class="body"/><rect x="10" y="10" width="40" height="26" rx="3" class="screen"/><g class="keys"><circle cx="18" cy="50" r="3.5"/><circle cx="30" cy="50" r="3.5"/><circle cx="42" cy="50" r="3.5"/><circle cx="18" cy="62" r="3.5"/><circle cx="30" cy="62" r="3.5"/><circle cx="42" cy="62" r="3.5"/><circle cx="18" cy="74" r="3.5"/><circle cx="30" cy="74" r="3.5"/><circle cx="42" cy="74" r="3.5"/></g></svg>
+              </div>
+              <span class="cap">Uma maquininha por adquirente; o operador escolhe pela bandeira</span>
+            </div>
+            <span class="arrow-big" aria-hidden="true">→</span>
+            <div class="side">
+              <span class="label">Com a Destaxa</span>
+              <div class="pos-row">
+                <svg class="pos one" viewBox="0 0 60 96" aria-hidden="true"><rect x="2" y="2" width="56" height="92" rx="10" class="body"/><rect x="10" y="10" width="40" height="26" rx="3" class="screen"/><g class="keys"><circle cx="18" cy="50" r="3.5"/><circle cx="30" cy="50" r="3.5"/><circle cx="42" cy="50" r="3.5"/><circle cx="18" cy="62" r="3.5"/><circle cx="30" cy="62" r="3.5"/><circle cx="42" cy="62" r="3.5"/><circle cx="18" cy="74" r="3.5"/><circle cx="30" cy="74" r="3.5"/><circle cx="42" cy="74" r="3.5"/></g></svg>
+              </div>
+              <span class="cap">Uma só, que escolhe sozinha a adquirente de menor custo</span>
+            </div>
+          </figure>
+
+          <h3>Meu papel</h3>
+          <p>Como PO de integração, eu era a ponte entre cliente, produto, adquirentes, bancos e automação comercial: das integrações com as adquirentes ao aceite técnico dos parceiros, junto com Suporte e CS para trazer a voz do cliente para o produto.</p>
+
+          <h3>Discovery</h3>
+          <ul>
+            <li>Entrevistas com usuários e conversas com adquirentes e autorizadoras.</li>
+            <li>Visitas às lojas e acompanhamento presencial das vendas no caixa, medindo o tempo de cada passo. Foi assim que vimos os balcões com várias maquininhas, uma para cada adquirente.</li>
+            <li>Ligações para clientes em risco de cancelamento, para entender o churn e tentar revertê-lo.</li>
+            <li>Rituais com CS e Suporte cobrindo a jornada inteira, da entrada do cliente ao feedback.</li>
+          </ul>
+
+          <h3>Decisões e trade-offs</h3>
+          <ol>
+            <li><b>Primeiro provar a economia, depois a conciliação.</b> A fase 1 concentrou o time na tecnologia de taxas e nas integrações com adquirentes, porque sem cobertura de adquirentes o roteamento não gera economia. A conciliação, mesmo sendo uma dor real, ficou para a fase 2.</li>
+            <li><b>Começar com regras, evoluir para IA.</b> A primeira versão roteava cada venda pelas regras de taxas negociadas. Isso validou o valor para o comerciante com menos risco técnico. Com volume e dados acumulados, o roteamento evoluiu para uma solução com IA.</li>
+            <li><b>A venda no caixa não podia ficar mais lenta.</b> O acompanhamento presencial mostrou que uma venda completa levava cerca de 5 minutos. Simplificamos o fluxo do operador e baixamos para 2. No totem de autoatendimento, um estudo de UX levou a reordenar as perguntas da jornada.</li>
+            <li><b>Escalar a homologação em vez de fazê-la caso a caso.</b> Redesenhei o processo de testes e homologação: -80% de erros em produção, -50% no tempo, e mais de 400 homologações de produtos e versões de parceiros em 18 meses.</li>
+            <li><b>Tornar a economia visível para reter.</b> Muitos clientes migravam para grandes players atraídos pela isenção da mensalidade da maquininha, um ganho imediato no fim do mês. A economia nas taxas existia, mas o cliente não a enxergava. Lançamos a conciliação, que mostra onde o custo pesa e quanto o cliente economiza.</li>
+          </ol>
+
+          <h3>A solução</h3>
+          <p>Uma única integração para o sistema de PDV do lojista. A cada venda:</p>
+          <div class="flow" aria-label="Fluxo da venda">
+            <span>Cartão no PDV</span><i>→</i>
+            <span>Bandeira + estabelecimento</span><i>→</i>
+            <span>Adquirente de menor custo</span><i>→</i>
+            <span>Conciliação venda × adquirente × banco</span>
+          </div>
+          <p class="note">O roteamento começou por regras de taxas e depois evoluiu para IA.</p>
+          <figure class="photo wide">
+            <img src="img/destaxa-produto.jpg" alt="Terminal de pagamento da Destaxa com a tela de venda, com as opções débito e crédito" width="1100" height="687" loading="lazy">
+            <figcaption>O terminal da Destaxa: uma única máquina conectada a várias adquirentes.</figcaption>
+          </figure>
+
+          <h3>Go-to-market</h3>
+          <p>Além do produto, participei do lançamento e da divulgação da solução para o varejo e para as empresas de automação comercial, nossos principais parceiros de distribuição.</p>
+          <div class="photo-pair">
+            <figure class="photo">
+              <img src="img/destaxa-autocom-time.jpg" alt="Time da Destaxa no estande da feira Autocom, vestindo camisetas da conciliação" width="399" height="501" loading="lazy">
+              <figcaption>Time da Destaxa no estande da Autocom 2023, com a conciliação em destaque.</figcaption>
+            </figure>
+            <figure class="photo">
+              <img src="img/autocom-cracha.jpg" alt="Crachá de expositora da Autocom 2023 em nome de Milena Novaes, Destaxa, coordenadora" width="640" height="635" loading="lazy">
+              <figcaption>Na Autocom 2023, feira de automação comercial, como expositora pela Destaxa.</figcaption>
+            </figure>
+          </div>
+
+          <h3>Resultados</h3>
+          <ul>
+            <li>+300 novos clientes por mês e -20% de churn</li>
+            <li>De 3 maquininhas no balcão para 1, que escolhe sozinha a adquirente</li>
+            <li>Venda completa no caixa de cerca de 5 para 2 minutos</li>
+            <li>-80% de erros em produção e -50% no tempo de homologação</li>
+            <li>+400 homologações em 18 meses, com mais de 130 sistemas de PDV e plataformas SaaS integrados, viabilizando contas como BR Malls, Subway e Arezzo</li>
+            <li>Picos de R$10 milhões/dia em transações com estabilidade</li>
+          </ul>
+          <p class="note">No período, a empresa passou de 80 mil para 2 milhões de transações por mês (2021 a 2023), chegou a cerca de 3,5 mil empresas clientes e captou R$30 milhões em novembro de 2023. Fontes: <a href="https://finsidersbrasil.com.br/reportagem-exclusiva-fintechs/na-guerra-das-maquininhas-a-fintech-destaxa-prega-conciliacao/" target="_blank" rel="noopener">Finsiders</a> e <a href="https://startups.com.br/fintech/fintech-destaxa-levanta-r-30-milhoes-com-astella/" target="_blank" rel="noopener">Startups</a>.</p>
+
+          <h3>Aprendizados</h3>
+          <p class="lesson"><b>Economia que o cliente não vê não retém.</b> Perdíamos clientes para uma isenção de mensalidade, um ganho pequeno mas visível. A conciliação transformou nossa economia em algo concreto.</p>
+          <p class="lesson"><b>Observar o uso real vale mais do que o relato.</b> Só acompanhando o caixa de perto descobrimos que a venda levava 5 minutos.</p>
+          <p class="lesson"><b>Em pagamentos, integração é produto.</b> A cobertura de adquirentes e PDVs definia o valor entregue ao cliente.</p>
+          <p><a href="#cases">← Voltar aos cases</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="inspecoes" aria-labelledby="inspecoes-title">
+      <div class="case">
+        <aside class="facts">
+          <span class="label">Case · Inspeções com ML</span>
+          <dl>
+            <div><dt>Empresa</dt><dd>Copel, companhia de energia do Paraná (via Stefanini)</dd></div>
+            <div><dt>Meu papel</dt><dd>Responsável pelo produto: entregas, métricas e roadmap</dd></div>
+            <div><dt>Período</dt><dd>2024 – 2026</dd></div>
+            <div><dt>Com quem</dt><dd>Time de dados e ciência, equipes de campo e área de operação</dd></div>
+            <div><dt>Tecnologia</dt><dd>Modelo de Machine Learning com cerca de 40 variáveis</dd></div>
+            <div><dt>Métrica de sucesso</dt><dd>Taxa de acerto por inspeção, comparada ao método antigo</dd></div>
+          </dl>
+        </aside>
+
+        <article class="story">
+          <h2 id="inspecoes-title">Inspeções com Machine Learning: o dobro de acertos com o mesmo número de visitas</h2>
+          <ul class="headline-results"><li>Assertividade de ~7% para ~14%</li><li>validado em teste lado a lado, em duas rodadas de campo</li><li>investimento pago em cerca de 6 meses</li></ul>
+
+          <h3>Contexto</h3>
+          <p>Equipes de campo inspecionam unidades consumidoras em busca de irregularidades no uso de energia. Quando uma irregularidade é confirmada, a companhia recupera o valor da energia que deixou de ser paga no período. O Paraná tem índices de irregularidade baixos, então encontrar os casos certos é como procurar agulha no palheiro.</p>
+
+          <h3>O problema</h3>
+          <div class="split">
+            <div><span class="label">Triagem manual</span><p>Analistas olhavam o histórico de consumo no sistema em busca de padrões estranhos, conferiam o imóvel pelo mapa online e só então mandavam a equipe. Era lento e dependia do olho de cada pessoa.</p></div>
+            <div><span class="label">Visitas perdidas</span><p>Só cerca de 6% a 7% das inspeções encontravam de fato uma irregularidade. Nas outras, a companhia pagava o deslocamento e as horas do técnico sem retorno.</p></div>
+          </div>
+          <figure class="counter" aria-label="Antes: de cada 100 inspeções, cerca de 7 encontravam irregularidade. Com o modelo: cerca de 14 de cada 100.">
+            <div class="side">
+              <span class="label">Triagem manual</span>
+              <div class="waffle" data-on="7" aria-hidden="true"></div>
+              <span class="cap"><b class="k-auto">■</b> ~7 de cada 100 inspeções encontravam irregularidade</span>
+            </div>
+            <span class="arrow-big" aria-hidden="true">→</span>
+            <div class="side">
+              <span class="label">Com o modelo</span>
+              <div class="waffle" data-on="14" aria-hidden="true"></div>
+              <span class="cap"><b class="k-auto">■</b> ~14 de cada 100 encontram irregularidade</span>
+            </div>
+          </figure>
+
+          <h3>Meu papel</h3>
+          <p>Defini as entregas, as métricas usadas para gerar a lista de inspeções, a ordem de prioridade e o roadmap. Com o time de dados, definimos a linha de corte do modelo, ou seja, a partir de qual probabilidade um caso entra na lista.</p>
+
+          <h3>Discovery</h3>
+          <ul>
+            <li>Conversamos com as equipes de campo e analisamos o histórico de inspeções para entender como as visitas eram escolhidas.</li>
+            <li>Mapeamos quais dados podiam ser usados no modelo, dentro das regras da LGPD.</li>
+            <li>A análise dos dados revelou padrões que a triagem manual não enxergava, como diferenças de comportamento por região e conforme o perfil de propriedade do imóvel. Esses achados viraram variáveis do modelo.</li>
+          </ul>
+
+          <h3>A solução</h3>
+          <div class="flow" aria-label="Fluxo das inspeções">
+            <span>Histórico de consumo + inspeções</span><i>→</i>
+            <span>Modelo com ~40 variáveis</span><i>→</i>
+            <span>Linha de corte</span><i>→</i>
+            <span>Lista priorizada</span><i>→</i>
+            <span>Equipe em campo</span><i>→</i>
+            <span>Análise dos resultados</span><i>↺</i>
+          </div>
+          <p class="note">O resultado de cada ciclo de inspeções volta para o modelo, em um processo contínuo inspirado no CRISP-DM.</p>
+          <p>O modelo combina o histórico de consumo, as inspeções anteriores e cerca de 40 variáveis, do local ao perfil da unidade. O resultado é uma lista priorizada que vai direto para a operação, sem a triagem manual de antes. O próximo passo do roadmap é transformar essa lista em um sistema dedicado.</p>
+
+          <h3>Decisões e trade-offs</h3>
+          <ol>
+            <li><b>Provar em campo, lado a lado.</b> Em vez de confiar só nas métricas do modelo, rodamos o mesmo número de inspeções com a lista do modelo e com o método antigo, como um teste A/B em campo. Repetimos a comparação em duas rodadas antes de mudar o processo.</li>
+            <li><b>Tratar o modelo como produto, não como projeto.</b> Depois de cada rodada de inspeções, analisamos os casos em que o modelo errou, ajustamos variáveis e regras e geramos uma nova lista. É um ciclo contínuo, no estilo do CRISP-DM: entender o negócio, preparar os dados, modelar, avaliar em campo e recomeçar.</li>
+            <li><b>A linha de corte é uma decisão de negócio.</b> Definir o threshold com o time de dados significou escolher quanto risco de visita perdida a operação aceita. Ela decide, na prática, quantas equipes saem e com que chance de acerto.</li>
+            <li><b>Começar com uma lista, não com um sistema.</b> A primeira entrega foi uma lista simples, que a operação já sabia usar. O investimento em um sistema dedicado ficou para depois de o modelo provar valor.</li>
+            <li><b>Dados pessoais com cuidado.</b> Como o modelo usa dados das unidades e dos clientes, a seleção de variáveis passou por cuidados de LGPD e de viés.</li>
+          </ol>
+
+          <h3>Resultados</h3>
+          <ul>
+            <li><b>Assertividade das inspeções de ~7% para ~14%</b> na rodada mais recente: o dobro de irregularidades encontradas com o mesmo número de visitas</li>
+            <li>Na primeira rodada, a diferença foi ainda maior: de ~6% para ~17%</li>
+            <li>Retorno do investimento positivo, com o projeto pago em cerca de 6 meses</li>
+            <li>Triagem manual pelo sistema e pelo mapa substituída pela lista do modelo</li>
+            <li>Menos deslocamentos e horas de técnico em visitas sem retorno</li>
+            <li>Um processo de baixa eficiência virou fonte consistente de receita recuperada</li>
+          </ul>
+
+          <h3>Aprendizados</h3>
+          <p class="lesson"><b>O threshold é do PM também.</b> A linha de corte parece técnica, mas define custo, cobertura e receita. Decidir junto com o time de dados foi o que alinhou o modelo à operação.</p>
+          <p class="lesson"><b>Os dados contam o que a experiência não vê.</b> Padrões por região e por perfil do imóvel não apareciam na triagem manual, mas estavam no histórico.</p>
+          <p class="lesson"><b>Prova em campo convence mais que métrica de modelo.</b> A lista testada com equipes reais foi o que mudou o processo.</p>
+          <p class="lesson"><b>O erro do modelo é insumo.</b> Cada visita sem irregularidade ensina algo. Analisar esses casos a cada ciclo é o que mantém o modelo à frente do método antigo, rodada após rodada.</p>
+          <p><a href="#cases">← Voltar aos cases</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="outros">
+      <div class="block-head">
+        <h2>Outros produtos</h2>
+        <span class="label">Em resumo</span>
+      </div>
+      <div class="cases">
+        <article class="case-card">
+          <div class="meta"><span class="label">Governo · Minsait</span><span class="label">2024</span></div>
+          <h3>Abastece PR</h3>
+          <div class="outcome">
+            <span class="o-label">Resultado</span>
+            <span class="o-big">Veículo <i>→</i> motorista</span>
+            <span class="o-sub">Maior controle sobre o uso de recursos públicos, com responsabilização individual por abastecimento</span>
+          </div>
+          <dl class="brief">
+            <div><dt>Desafio</dt><dd>No modelo anterior, o cartão de abastecimento da frota oficial era vinculado ao veículo, o que limitava a rastreabilidade sobre quem realizava cada abastecimento.</dd></div>
+            <div><dt>Solução</dt><dd>Estruturação, a partir do MVP, de um novo modelo com cartão vinculado ao motorista, fornecido pelo Banco do Brasil, restrito à compra de combustível e com conciliação de todas as transações.</dd></div>
+          </dl>
+        </article>
+        <article class="case-card">
+          <div class="meta"><span class="label">Energia · IA generativa</span><span class="label">2024 – 2026</span></div>
+          <h3>Assistente corporativo com RAG</h3>
+          <div class="outcome">
+            <span class="o-label">Resultado</span>
+            <span class="o-big">22 s <i>→</i> 7 s</span>
+            <span class="o-sub">no tempo de resposta, com 4 mil usuários cadastrados e 200 ativos por dia</span>
+          </div>
+          <dl class="brief">
+            <div><dt>Desafio</dt><dd>Disponibilizar o conhecimento interno da companhia por meio de IA generativa, sem expor documentos sigilosos a modelos de uso público.</dd></div>
+            <div><dt>Solução</dt><dd>Ambiente seguro desenvolvido em parceria com o Google, com arquitetura RAG. Os parâmetros do modelo (temperatura, top-k e top-p) e a estratégia de embedding foram definidos com base em testes de acurácia, e uma base de perguntas frequentes passou a ser consultada antes da busca semântica.</dd></div>
+          </dl>
+        </article>
+        <article class="case-card">
+          <div class="meta"><span class="label">Energia · Dados</span><span class="label">2024 – 2026</span></div>
+          <h3>Automação contábil</h3>
+          <div class="outcome">
+            <span class="o-label">Resultado</span>
+            <span class="o-big">3 meses <i>→</i> sob demanda</span>
+            <span class="o-sub">EBITDA, PMSO e balanço calculados de forma automatizada, sem etapas manuais entre áreas</span>
+          </div>
+          <dl class="brief">
+            <div><dt>Desafio</dt><dd>O cálculo de EBITDA, PMSO e balanço era realizado em planilha, com etapas manuais distribuídas entre diversas áreas.</dd></div>
+            <div><dt>Solução</dt><dd>Mapeamento das regras de cálculo, ingestão dos dados do SAP em processo de ETL no BigQuery, virtualização das fontes com Denodo e disponibilização dos resultados em dashboard.</dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="sobre">
+      <div class="block-head"><h2>Sobre</h2></div>
+      <div class="about">
+        <div>
+          <img class="portrait" src="img/milena-retrato.jpg" alt="Retrato de Milena Rosa Novaes" width="520" height="520" loading="lazy">
+          <span class="label">Como cheguei aqui</span>
+          <p><b>Comecei a programar aos 15 anos, num curso técnico de desenvolvimento front-end.</b> Foi ali que decidi cursar Sistemas de Informação.</p>
+          <p>Meus primeiros anos na área foram como desenvolvedora full stack. No dia a dia, fui ficando cada vez mais perto do cliente, do suporte e das decisões sobre o que construir e por quê. Aos poucos, o trabalho me levou para produto.</p>
+          <p>Hoje trabalho no ciclo completo: discovery, validação de hipóteses, estratégia, roadmap, priorização, entrega e métricas. Ter vindo do desenvolvimento faz diferença: converso de igual para igual com engenharia e dados e sei estimar o custo de cada decisão. Meus melhores resultados vêm de ambientes com regras de negócio críticas e regulação, como energia, pagamentos e setor público.</p>
+          <p>Já levei produtos de pagamentos, integrações, governo digital e IA do zero à escala. Em qualquer caso, o objetivo é o mesmo: uma métrica de negócio que se mexe.</p>
+        </div>
+        <div class="about-side">
+          <div>
+            <span class="label">Trajetória</span>
+            <ul class="timeline" aria-label="Trajetória">
+              <li><span class="yr">2024 – 2026</span><span>Product Manager, AI &amp; Data Products · Stefanini, alocada na Copel</span></li>
+              <li><span class="yr">2024</span><span>Product Owner · Minsait, Governo do Paraná</span></li>
+              <li><span class="yr">2022 – 2024</span><span>Product Owner · Destaxa</span></li>
+              <li><span class="yr">2017 – 2021</span><span>Analista de Sistemas a Product Owner · Tefway</span></li>
+            </ul>
+          </div>
+          <div>
+            <span class="label">Formação</span>
+            <ul class="timeline" aria-label="Formação">
+              <li><span class="yr">2018 – 2020</span><span>Pós-graduação em Engenharia de Software Ágil · Universidade Positivo</span></li>
+              <li><span class="yr">2014 – 2017</span><span>Bacharelado em Sistemas de Informação · Centro Universitário Santa Cruz de Curitiba<br><span class="note">Destaque Acadêmico como melhor aluna da graduação</span></span></li>
+            </ul>
+          </div>
+          <div>
+            <span class="label">Certificações</span>
+            <ul class="timeline" aria-label="Certificações">
+              <li><span class="yr">2025</span><span>Product Master · PM3<br><span class="note">Product Management, Discovery, Analytics, Growth, Marketing e Leadership</span></span></li>
+              <li><span class="yr">2026</span><span>Product AI Specialist · PM3</span></li>
+              <li><span class="yr">Oracle</span><span>OCI Generative AI Professional</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="finale" id="contato" aria-labelledby="contato-title">
+    <div class="wrap">
+      <span class="label">Contato</span>
+      <h2 id="contato-title">Vamos conversar sobre o <em>seu próximo produto?</em></h2>
+      <div class="contact-row">
+        <div class="email-chip">
+        <span class="addr" id="email-text">milenarosanovaes@gmail.com</span>
+        <button class="copy" id="copy-email" type="button" aria-label="Copiar e-mail" title="Copiar e-mail">
+          <svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg>
+          <svg class="i-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </button>
+      </div>
+        <a class="btn" href="https://www.linkedin.com/in/milena-rnovaes/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+      </div>
+      <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Milena Rosa Novaes · Product Manager</span>
+    <span>Curitiba, Brasil</span>
+  </div>
+</footer>
+</div>
+<div class="lang-root" data-lang="en" lang="en" hidden>
+<main id="inicio-en">
+  <section class="hero" id="hero-en">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="label">Product Manager · Curitiba, Brazil</span>
+        <h1>Products that move <span class="hl">the number.</span></h1>
+        <p>I have been a Product Manager for 7 years, with 10 in technology. I build digital products in fintech, energy and government, in B2B and B2C contexts, from discovery to metrics in production, using whatever technology the problem calls for: integrations, data or AI.</p>
+        <div class="actions">
+          <a class="btn" href="#cases-en">See cases <span aria-hidden="true">↓</span></a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/milena-rnovaes/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="panel" aria-label="Key results">
+        <div class="panel-head"><span class="label">Impact readings</span><span class="live">before → after</span></div>
+        <a class="reading" href="#validacao-en">
+          <span class="what"><b>AI contract validation</b><span>Response time to customer</span></span>
+          <span class="readout"><span class="from">24 h</span><span class="arr">→</span><span class="to"><span class="num" data-from="24" data-to="1">1</span> h</span></span>
+        </a>
+        <a class="reading" href="#destaxa-en">
+          <span class="what"><b>Payment orchestration</b><span>Card machines at the counter</span></span>
+          <span class="readout"><span class="from">3</span><span class="arr">→</span><span class="to"><span class="num" data-from="3" data-to="1">1</span></span></span>
+        </a>
+        <a class="reading" href="#inspecoes-en">
+          <span class="what"><b>Machine Learning inspections</b><span>Field hit rate</span></span>
+          <span class="readout"><span class="from">~7%</span><span class="arr">→</span><span class="to">~<span class="num" data-from="7" data-to="14">14</span>%</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="wrap">
+    <section class="block" id="cases-en">
+      <div class="block-head">
+        <h2>Cases</h2>
+        <span class="label">3 projects · 2022 – 2026</span>
+      </div>
+      <nav class="index" aria-label="Case list">
+        <a class="row" href="#validacao-en">
+          <span class="big">~92%<small>validated with no human step</small></span>
+          <span class="main"><span class="label">Energy · AI</span><h3>AI contract validation</h3><p>An LLM and a rules engine validate business partners' contracts before billing, with a person reviewing only the exceptions.</p></span>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+        <a class="row" href="#destaxa-en">
+          <span class="big">3 → 1<small>card machines at the counter</small></span>
+          <span class="main"><span class="label">Fintech · Payments</span><h3>Merchants always on the lowest fee</h3><p>Payment orchestration that routes every sale to the cheapest acquirer, with reconciliation so customers can see what they save.</p></span>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+        <a class="row" href="#inspecoes-en">
+          <span class="big">2x<small>more hits in the field</small></span>
+          <span class="main"><span class="label">Energy · Machine Learning</span><h3>Inspections that became revenue</h3><p>A Machine Learning model now tells field teams where to go, replacing manual screening through the system and online maps.</p></span>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      </nav>
+    </section>
+
+    <section class="block" id="validacao-en" aria-labelledby="validacao-title-en">
+      <div class="case">
+        <aside class="facts">
+          <span class="label">Case · Contract validation</span>
+          <dl>
+            <div><dt>Company</dt><dd>Copel, the Paraná energy company (via Stefanini)</dd></div>
+            <div><dt>My role</dt><dd>Product Manager, from concept to continuous evolution</dd></div>
+            <div><dt>Period</dt><dd>2026 – present</dd></div>
+            <div><dt>Worked with</dt><dd>Data and AI engineering, business areas and commercial partners</dd></div>
+            <div><dt>Technology</dt><dd>LLM for extraction, rules engine, integration with the customer registry</dd></div>
+            <div><dt>Success metric</dt><dd>% of cases validated with no human step and response time to the customer</dd></div>
+          </dl>
+        </aside>
+
+        <article class="story">
+          <h2 id="validacao-title-en">AI contract validation: 92% automated and a 1-hour response</h2>
+          <ul class="headline-results"><li>~92% of cases validated with no human step</li><li>response time from 24 h to 1 h</li><li>5,000 documents in 30 min</li><li>-80% cost vs. the manual process</li></ul>
+
+          <h3>Context</h3>
+          <p>Commercial partners sell products to the company's customers. For every deal, the partner sends a proof package: the contract and supporting evidence, such as the customer's bill. The charge to the end customer can only be issued if everything complies with the business rules.</p>
+
+          <h3>The problem</h3>
+          <div class="split">
+            <div><span class="label">Time and errors</span><p>Validation was manual, with a 24-hour deadline to respond to the customer. One person reviewed about 5 documents every 20 minutes, and manual review let errors through.</p></div>
+            <div><span class="label">Cost</span><p>The alternative under study was hiring a third-party firm that would charge per customer reviewed. With partnership volume growing, neither option could scale.</p></div>
+          </div>
+          <figure class="counter" aria-label="Before: an analyst validated about 5 documents every 20 minutes, responding within 24 hours. After: out of every 100 cases, about 92 are validated automatically and 8 go to human review, with a response in about 1 hour.">
+            <div class="side">
+              <span class="label">Before</span>
+              <div class="docs" aria-hidden="true">
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+                <svg viewBox="0 0 24 30"><path class="doc" d="M2 2h14l6 6v20H2z"/><path class="ln" d="M6 13h12M6 18h12M6 23h8"/></svg>
+              </div>
+              <span class="cap">5 documents every 20 min per analyst · response within 24 h</span>
+            </div>
+            <span class="arrow-big" aria-hidden="true">→</span>
+            <div class="side">
+              <span class="label">With the platform</span>
+              <div class="waffle" data-on="92" aria-hidden="true"></div>
+              <span class="cap"><b class="k-auto">■</b> ~92 of every 100 validated automatically · <b class="k-man">□</b> ~8 with human review · response in ~1 h</span>
+            </div>
+          </figure>
+
+          <h3>My role</h3>
+          <p>I owned the product end to end: concept, roadmap, documentation and acceptance criteria, alignment with the engineering team and tracking usage with the business areas. It is a product in continuous evolution, not a project with an end date.</p>
+
+          <h3>Discovery</h3>
+          <ul>
+            <li>We mapped the manual process with flow techniques, noting every bottleneck and every business rule the analysts applied.</li>
+            <li>We defined the validation rules with business stakeholders, including the DPO, to ensure compliance with Brazil's data protection law (LGPD) from the start.</li>
+            <li>With the map in hand, we split the scope into value increments to get something into production early and evolve from real usage.</li>
+            <li>The least obvious finding: many discrepancies started before validation, in <b>typing errors in the contracts</b> made on the partner's side. The product had to catch those errors, not just check rules.</li>
+          </ul>
+
+          <h3>The solution</h3>
+          <div class="flow" aria-label="Validation flow">
+            <span>Proof package</span><i>→</i>
+            <span>LLM extracts the data</span><i>→</i>
+            <span>Rules engine + registry</span><i>→</i>
+            <span>Approved or human review</span><i>→</i>
+            <span>Reconciled billing</span>
+          </div>
+          <p>An LLM reads the documents and extracts the information. A rules engine checks that data against the business rules and the company's customer registry. What passes is approved for billing; anything with a discrepancy goes to a person for review. A reconciliation module then checks that what was billed matches what was requested, and a dashboard tracks the key indicators and how each partnership is evolving.</p>
+
+          <h3>Decisions and trade-offs</h3>
+          <ol>
+            <li><b>Ship in phases, each one in production.</b> First extraction and rule checks, which solved the main pain. Then the dashboard to track results. Next, double validation against the customer registry and, finally, reconciliation between request and billing.</li>
+            <li><b>Choose the extraction by data, not preference.</b> We tested different extraction systems on real documents and kept the one with the lowest error rate. Extraction was checked by people, comparing what the model read against the original document.</li>
+            <li><b>Validate in production before investing in the UI.</b> The first interface was built in Streamlit to test hypotheses with real users quickly. The move to React, within the company's design system, only came after the product proved its value.</li>
+            <li><b>Precision before full automation.</b> The rules are the hardest part, because they decide how much volume the AI handles alone and how much goes to a person. The premise was that nothing wrong can be approved: when in doubt, the case goes to human review, even if that lowers the automation rate.</li>
+          </ol>
+
+          <h3>Results</h3>
+          <ul>
+            <li><b>~92% of cases validated automatically</b>; only about 8% go to human review</li>
+            <li>Response time to the customer from up to 24 hours to about 1 hour</li>
+            <li>5,000 documents reviewed in 30 minutes, versus about 5 every 20 minutes per analyst</li>
+            <li>Cost per review about 99% lower than the outsourcing option under study</li>
+            <li>-80% cost compared with the manual process</li>
+            <li>Double validation against the customer registry and reconciliation of everything that goes to billing</li>
+            <li>Live with two partners, processing hundreds of contracts a day</li>
+          </ul>
+
+          <h3>Lessons learned</h3>
+          <p class="lesson"><b>In automation, the rules are the product.</b> The model extracts the data, but the rules decide what is approved, what goes to a person and how much risk the company accepts.</p>
+          <p class="lesson"><b>Errors start before the process.</b> Mapping the whole flow showed that many discrepancies came from typing on the partner's side, outside our system.</p>
+          <p class="lesson"><b>Production before polish.</b> Starting with a simple interface put the product in users' hands earlier, and what we learned there guided the investment in the final front end.</p>
+          <p><a href="#cases-en">← Back to cases</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="destaxa-en" aria-labelledby="destaxa-title-en">
+      <div class="case">
+        <aside class="facts">
+          <span class="label">Case · Destaxa</span>
+          <dl>
+            <div><dt>Company</dt><dd>Destaxa, payments fintech</dd></div>
+            <div><dt>My role</dt><dd>Product Owner · Integration Lead</dd></div>
+            <div><dt>Period</dt><dd>2022 – 2024</dd></div>
+            <div><dt>Worked with</dt><dd>Acquirers, banks, retail automation providers, Support and CS</dd></div>
+            <div><dt>Technology</dt><dd>API integrations with acquirers and POS systems, rule-based then AI-based routing, bank reconciliation</dd></div>
+            <div><dt>Success metric</dt><dd>New customers per month and churn</dd></div>
+          </dl>
+        </aside>
+
+        <article class="story">
+          <h2 id="destaxa-title-en">Payment orchestration: merchants always on the lowest fee</h2>
+          <ul class="headline-results"><li>+300 new customers/month</li><li>-20% churn</li><li>from 3 card machines to 1</li><li>checkout from 5 to 2 min</li></ul>
+
+          <h3>Context</h3>
+          <p>In Brazil's card machine market, merchants negotiate different fees with each acquirer (Cielo, Rede, Stone), depending on the card brand and the merchant's business category. To protect their margin, they would need to compare acquirers all the time. In practice, they ended up paying more than they had to. This was before Pix instant payments took off, and cards still dominated.</p>
+          <p>Destaxa was founded in 2021 to orchestrate payments: a single solution connected to several acquirers that routes each sale to the cheapest one. It was an approach still little explored in Brazil.</p>
+
+          <h3>The problem</h3>
+          <div class="split">
+            <div><span class="label">For the merchant</span><p>To pay less, many kept up to 3 card machines at the counter, one per acquirer, and the cashier picked which one to use based on the card brand. More devices, more monthly fees, slower checkout and no certainty that each sale reached the bank correctly.</p></div>
+            <div><span class="label">For the business</span><p>Every new acquirer and every point-of-sale system required integration and certification. That was the growth bottleneck.</p></div>
+          </div>
+          <figure class="counter" aria-label="Before: three card machines, one per acquirer. After: a single one that picks the lowest-cost acquirer.">
+            <div class="side">
+              <span class="label">Before</span>
+              <div class="pos-row">
+                <svg class="pos" viewBox="0 0 60 96" aria-hidden="true"><rect x="2" y="2" width="56" height="92" rx="10" class="body"/><rect x="10" y="10" width="40" height="26" rx="3" class="screen"/><g class="keys"><circle cx="18" cy="50" r="3.5"/><circle cx="30" cy="50" r="3.5"/><circle cx="42" cy="50" r="3.5"/><circle cx="18" cy="62" r="3.5"/><circle cx="30" cy="62" r="3.5"/><circle cx="42" cy="62" r="3.5"/><circle cx="18" cy="74" r="3.5"/><circle cx="30" cy="74" r="3.5"/><circle cx="42" cy="74" r="3.5"/></g></svg>
+                <svg class="pos" viewBox="0 0 60 96" aria-hidden="true"><rect x="2" y="2" width="56" height="92" rx="10" class="body"/><rect x="10" y="10" width="40" height="26" rx="3" class="screen"/><g class="keys"><circle cx="18" cy="50" r="3.5"/><circle cx="30" cy="50" r="3.5"/><circle cx="42" cy="50" r="3.5"/><circle cx="18" cy="62" r="3.5"/><circle cx="30" cy="62" r="3.5"/><circle cx="42" cy="62" r="3.5"/><circle cx="18" cy="74" r="3.5"/><circle cx="30" cy="74" r="3.5"/><circle cx="42" cy="74" r="3.5"/></g></svg>
+                <svg class="pos" viewBox="0 0 60 96" aria-hidden="true"><rect x="2" y="2" width="56" height="92" rx="10" class="body"/><rect x="10" y="10" width="40" height="26" rx="3" class="screen"/><g class="keys"><circle cx="18" cy="50" r="3.5"/><circle cx="30" cy="50" r="3.5"/><circle cx="42" cy="50" r="3.5"/><circle cx="18" cy="62" r="3.5"/><circle cx="30" cy="62" r="3.5"/><circle cx="42" cy="62" r="3.5"/><circle cx="18" cy="74" r="3.5"/><circle cx="30" cy="74" r="3.5"/><circle cx="42" cy="74" r="3.5"/></g></svg>
+              </div>
+              <span class="cap">One machine per acquirer; the cashier picks by card brand</span>
+            </div>
+            <span class="arrow-big" aria-hidden="true">→</span>
+            <div class="side">
+              <span class="label">With Destaxa</span>
+              <div class="pos-row">
+                <svg class="pos one" viewBox="0 0 60 96" aria-hidden="true"><rect x="2" y="2" width="56" height="92" rx="10" class="body"/><rect x="10" y="10" width="40" height="26" rx="3" class="screen"/><g class="keys"><circle cx="18" cy="50" r="3.5"/><circle cx="30" cy="50" r="3.5"/><circle cx="42" cy="50" r="3.5"/><circle cx="18" cy="62" r="3.5"/><circle cx="30" cy="62" r="3.5"/><circle cx="42" cy="62" r="3.5"/><circle cx="18" cy="74" r="3.5"/><circle cx="30" cy="74" r="3.5"/><circle cx="42" cy="74" r="3.5"/></g></svg>
+              </div>
+              <span class="cap">A single one that picks the lowest-cost acquirer on its own</span>
+            </div>
+          </figure>
+
+          <h3>My role</h3>
+          <p>As integration PO, I was the bridge between customers, product, acquirers, banks and retail automation providers: from acquirer integrations to partners' technical acceptance, working with Support and CS to bring the customer's voice into the product.</p>
+
+          <h3>Discovery</h3>
+          <ul>
+            <li>User interviews and conversations with acquirers and card authorizers.</li>
+            <li>Store visits and in-person observation of checkout, timing each step. That is how we saw counters with several card machines, one per acquirer.</li>
+            <li>Calls to customers at risk of cancelling, to understand churn and try to reverse it.</li>
+            <li>Rituals with CS and Support covering the whole journey, from onboarding to feedback.</li>
+          </ul>
+
+          <h3>Decisions and trade-offs</h3>
+          <ol>
+            <li><b>Prove the savings first, reconciliation second.</b> Phase 1 focused the team on fee technology and acquirer integrations, because without acquirer coverage, routing saves nothing. Reconciliation, though a real pain, was left for phase 2.</li>
+            <li><b>Start with rules, evolve to AI.</b> The first version routed each sale using the negotiated fee rules. That validated the value for merchants with less technical risk. With volume and data built up, routing evolved into an AI-based solution.</li>
+            <li><b>Checkout could not get slower.</b> In-person observation showed a full sale took about 5 minutes. We simplified the cashier's flow and brought it down to 2. At the self-service kiosk, a UX study led us to reorder the questions in the journey.</li>
+            <li><b>Scale certification instead of doing it case by case.</b> I redesigned the testing and certification process: -80% production errors, -50% time, and over 400 certifications of partner products and versions in 18 months.</li>
+            <li><b>Make the savings visible to retain.</b> Many customers left for large players attracted by a waived machine fee, an immediate gain at month end. The fee savings were real, but customers could not see them. We launched reconciliation, which shows where costs weigh and how much the customer saves.</li>
+          </ol>
+
+          <h3>The solution</h3>
+          <p>A single integration for the merchant's point-of-sale system. On every sale:</p>
+          <div class="flow" aria-label="Sale flow">
+            <span>Card at the POS</span><i>→</i>
+            <span>Card brand + merchant</span><i>→</i>
+            <span>Lowest-cost acquirer</span><i>→</i>
+            <span>Reconciliation: sale × acquirer × bank</span>
+          </div>
+          <p class="note">Routing started with fee rules and later evolved to AI.</p>
+          <figure class="photo wide">
+            <img src="img/destaxa-produto.jpg" alt="Destaxa payment terminal showing the sale screen with debit and credit options" width="1100" height="687" loading="lazy">
+            <figcaption>The Destaxa terminal: a single machine connected to several acquirers.</figcaption>
+          </figure>
+
+          <h3>Go-to-market</h3>
+          <p>Beyond the product, I took part in launching and promoting the solution to retailers and to retail automation companies, our main distribution partners.</p>
+          <div class="photo-pair">
+            <figure class="photo">
+              <img src="img/destaxa-autocom-time.jpg" alt="Destaxa team at the Autocom trade show booth, wearing reconciliation campaign t-shirts" width="399" height="501" loading="lazy">
+              <figcaption>The Destaxa team at the Autocom 2023 booth, featuring reconciliation.</figcaption>
+            </figure>
+            <figure class="photo">
+              <img src="img/autocom-cracha.jpg" alt="Autocom 2023 exhibitor badge for Milena Novaes, Destaxa, coordinator" width="640" height="635" loading="lazy">
+              <figcaption>At Autocom 2023, Brazil's retail automation trade show, as an exhibitor for Destaxa.</figcaption>
+            </figure>
+          </div>
+
+          <h3>Results</h3>
+          <ul>
+            <li>+300 new customers per month and -20% churn</li>
+            <li>From 3 card machines at the counter to 1 that picks the acquirer on its own</li>
+            <li>Full checkout from about 5 to 2 minutes</li>
+            <li>-80% production errors and -50% certification time</li>
+            <li>400+ certifications in 18 months, with 130+ POS systems and SaaS platforms integrated, opening accounts such as BR Malls, Subway and Arezzo</li>
+            <li>Peaks of BRL 10M a day in transactions, running stably</li>
+          </ul>
+          <p class="note">Over the period, the company grew from 80 thousand to 2 million transactions a month (2021 to 2023), reached about 3,500 business customers and raised BRL 30M in November 2023. Sources: <a href="https://finsidersbrasil.com.br/reportagem-exclusiva-fintechs/na-guerra-das-maquininhas-a-fintech-destaxa-prega-conciliacao/" target="_blank" rel="noopener">Finsiders</a> and <a href="https://startups.com.br/fintech/fintech-destaxa-levanta-r-30-milhoes-com-astella/" target="_blank" rel="noopener">Startups</a>.</p>
+
+          <h3>Lessons learned</h3>
+          <p class="lesson"><b>Savings customers cannot see do not retain them.</b> We were losing customers to a waived monthly fee, a small but visible gain. Reconciliation turned our savings into something concrete.</p>
+          <p class="lesson"><b>Watching real use beats hearing about it.</b> Only by observing checkout up close did we find out a sale took 5 minutes.</p>
+          <p class="lesson"><b>In payments, integration is the product.</b> Acquirer and POS coverage defined the value delivered to customers.</p>
+          <p><a href="#cases-en">← Back to cases</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="inspecoes-en" aria-labelledby="inspecoes-title-en">
+      <div class="case">
+        <aside class="facts">
+          <span class="label">Case · ML inspections</span>
+          <dl>
+            <div><dt>Company</dt><dd>Copel, the Paraná energy company (via Stefanini)</dd></div>
+            <div><dt>My role</dt><dd>Product owner: deliverables, metrics and roadmap</dd></div>
+            <div><dt>Period</dt><dd>2024 – 2026</dd></div>
+            <div><dt>Worked with</dt><dd>Data science team, field teams and operations</dd></div>
+            <div><dt>Technology</dt><dd>Machine Learning model with about 40 features</dd></div>
+            <div><dt>Success metric</dt><dd>Hit rate per inspection, compared with the old method</dd></div>
+          </dl>
+        </aside>
+
+        <article class="story">
+          <h2 id="inspecoes-title-en">Machine Learning inspections: twice the hits with the same number of visits</h2>
+          <ul class="headline-results"><li>Hit rate from ~7% to ~14%</li><li>validated in side-by-side field tests over two rounds</li><li>payback in about 6 months</li></ul>
+
+          <h3>Context</h3>
+          <p>Field teams inspect customer sites for irregularities in energy use. When an irregularity is confirmed, the company recovers the value of the energy that went unpaid during the period. Paraná has low irregularity rates, so finding the right cases is like looking for a needle in a haystack.</p>
+
+          <h3>The problem</h3>
+          <div class="split">
+            <div><span class="label">Manual screening</span><p>Analysts looked through consumption history in the system for unusual patterns, checked the property on an online map and only then dispatched a team. It was slow and depended on each person's judgment.</p></div>
+            <div><span class="label">Wasted visits</span><p>Only about 6% to 7% of inspections actually found an irregularity. On the rest, the company paid for travel and technician hours with no return.</p></div>
+          </div>
+          <figure class="counter" aria-label="Before: out of every 100 inspections, about 7 found an irregularity. With the model: about 14 out of 100.">
+            <div class="side">
+              <span class="label">Manual screening</span>
+              <div class="waffle" data-on="7" aria-hidden="true"></div>
+              <span class="cap"><b class="k-auto">■</b> ~7 of every 100 inspections found an irregularity</span>
+            </div>
+            <span class="arrow-big" aria-hidden="true">→</span>
+            <div class="side">
+              <span class="label">With the model</span>
+              <div class="waffle" data-on="14" aria-hidden="true"></div>
+              <span class="cap"><b class="k-auto">■</b> ~14 of every 100 find an irregularity</span>
+            </div>
+          </figure>
+
+          <h3>My role</h3>
+          <p>I defined the deliverables, the metrics used to build the inspection list, the priority order and the roadmap. With the data team, we set the model's cutoff, that is, the probability above which a case makes the list.</p>
+
+          <h3>Discovery</h3>
+          <ul>
+            <li>We talked to field teams and analyzed inspection history to understand how visits were chosen.</li>
+            <li>We mapped which data could be used in the model under Brazil's data protection law (LGPD).</li>
+            <li>The data revealed patterns manual screening missed, such as behavior differences by region and by property ownership profile. These findings became model features.</li>
+          </ul>
+
+          <h3>The solution</h3>
+          <div class="flow" aria-label="Inspection flow">
+            <span>Consumption + inspection history</span><i>→</i>
+            <span>Model with ~40 features</span><i>→</i>
+            <span>Cutoff</span><i>→</i>
+            <span>Prioritized list</span><i>→</i>
+            <span>Field team</span><i>→</i>
+            <span>Results analysis</span><i>↺</i>
+          </div>
+          <p class="note">The outcome of each inspection cycle feeds back into the model, in a continuous process inspired by CRISP-DM.</p>
+          <p>The model combines consumption history, past inspections and about 40 features, from location to site profile. The output is a prioritized list that goes straight to operations, with no manual screening. The next roadmap step is to turn that list into a dedicated system.</p>
+
+          <h3>Decisions and trade-offs</h3>
+          <ol>
+            <li><b>Prove it in the field, side by side.</b> Instead of relying only on model metrics, we ran the same number of inspections with the model's list and with the old method, as a field A/B test. We repeated the comparison over two rounds before changing the process.</li>
+            <li><b>Treat the model as a product, not a project.</b> After each inspection round, we analyzed the cases the model got wrong, adjusted features and rules and generated a new list. It is a continuous cycle in the CRISP-DM style: understand the business, prepare the data, model, evaluate in the field and start again.</li>
+            <li><b>The cutoff is a business decision.</b> Setting the threshold with the data team meant choosing how much risk of wasted visits operations would accept. In practice, it decides how many teams go out and with what chance of success.</li>
+            <li><b>Start with a list, not a system.</b> The first deliverable was a simple list that operations already knew how to use. Investing in a dedicated system came after the model proved its value.</li>
+            <li><b>Handle personal data with care.</b> Because the model uses site and customer data, feature selection went through data protection and bias reviews.</li>
+          </ol>
+
+          <h3>Results</h3>
+          <ul>
+            <li><b>Inspection hit rate from ~7% to ~14%</b> in the latest round: twice the irregularities found with the same number of visits</li>
+            <li>In the first round, the gap was even larger: from ~6% to ~17%</li>
+            <li>Positive return on investment, with payback in about 6 months</li>
+            <li>Manual screening through the system and maps replaced by the model's list</li>
+            <li>Less travel and fewer technician hours spent on visits with no return</li>
+            <li>A low-efficiency process became a steady source of recovered revenue</li>
+          </ul>
+
+          <h3>Lessons learned</h3>
+          <p class="lesson"><b>The threshold belongs to the PM too.</b> The cutoff looks technical, but it defines cost, coverage and revenue. Deciding it together with the data team is what aligned the model with operations.</p>
+          <p class="lesson"><b>Data shows what experience cannot see.</b> Patterns by region and property profile did not show up in manual screening, but they were in the history.</p>
+          <p class="lesson"><b>Field proof convinces more than model metrics.</b> The list tested with real teams is what changed the process.</p>
+          <p class="lesson"><b>Model errors are input.</b> Every visit with no irregularity teaches something. Analyzing those cases each cycle is what keeps the model ahead of the old method, round after round.</p>
+          <p><a href="#cases-en">← Back to cases</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="outros-en">
+      <div class="block-head">
+        <h2>Other products</h2>
+        <span class="label">In brief</span>
+      </div>
+      <div class="cases">
+        <article class="case-card">
+          <div class="meta"><span class="label">Government · Minsait</span><span class="label">2024</span></div>
+          <h3>Abastece PR</h3>
+          <div class="outcome">
+            <span class="o-label">Result</span>
+            <span class="o-big">Vehicle <i>→</i> driver</span>
+            <span class="o-sub">Greater control over the use of public funds, with individual accountability for each fill-up</span>
+          </div>
+          <dl class="brief">
+            <div><dt>Challenge</dt><dd>In the previous model, the official fleet's fuel card was tied to the vehicle, which limited traceability of who made each fill-up.</dd></div>
+            <div><dt>Solution</dt><dd>Structured, from the MVP, a new model with the card tied to the driver, issued by Banco do Brasil, restricted to fuel purchases and with reconciliation of every transaction.</dd></div>
+          </dl>
+        </article>
+        <article class="case-card">
+          <div class="meta"><span class="label">Energy · Generative AI</span><span class="label">2024 – 2026</span></div>
+          <h3>Enterprise RAG assistant</h3>
+          <div class="outcome">
+            <span class="o-label">Result</span>
+            <span class="o-big">22 s <i>→</i> 7 s</span>
+            <span class="o-sub">in response time, with 4,000 registered users and 200 active daily</span>
+          </div>
+          <dl class="brief">
+            <div><dt>Challenge</dt><dd>Make the company's internal knowledge available through generative AI without exposing confidential documents to public models.</dd></div>
+            <div><dt>Solution</dt><dd>A secure environment built in partnership with Google, using a RAG architecture. Model parameters (temperature, top-k and top-p) and the embedding strategy were set based on accuracy tests, and a frequently-asked-questions base is checked before semantic search.</dd></div>
+          </dl>
+        </article>
+        <article class="case-card">
+          <div class="meta"><span class="label">Energy · Data</span><span class="label">2024 – 2026</span></div>
+          <h3>Accounting automation</h3>
+          <div class="outcome">
+            <span class="o-label">Result</span>
+            <span class="o-big">3 months <i>→</i> on demand</span>
+            <span class="o-sub">EBITDA, operating costs (PMSO) and balance sheet calculated automatically, with no manual hand-offs between teams</span>
+          </div>
+          <dl class="brief">
+            <div><dt>Challenge</dt><dd>EBITDA, operating costs and balance sheet were calculated in a spreadsheet, with manual steps spread across several teams.</dd></div>
+            <div><dt>Solution</dt><dd>Mapped the calculation rules, ingested SAP data through an ETL process in BigQuery, virtualized the sources with Denodo and delivered the results in a dashboard.</dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="sobre-en">
+      <div class="block-head"><h2>About</h2></div>
+      <div class="about">
+        <div>
+          <img class="portrait" src="img/milena-retrato.jpg" alt="Portrait of Milena Rosa Novaes" width="520" height="520" loading="lazy">
+          <span class="label">How I got here</span>
+          <p><b>I started coding at 15, in a front-end development course.</b> That is what led me to study Information Systems.</p>
+          <p>My first years in the field were as a full-stack developer. Day to day, I kept getting closer to customers, to support and to decisions about what to build and why. Little by little, the work brought me into product.</p>
+          <p>Today I work across the full cycle: discovery, hypothesis validation, strategy, roadmap, prioritization, delivery and metrics. Coming from development makes a difference: I talk with engineering and data as a peer and can estimate the cost of each decision. My best results come from environments with critical business rules and regulation, such as energy, payments and the public sector.</p>
+          <p>I have taken payments, integrations, digital government and AI products from zero to scale. Either way, the goal is the same: a business metric that moves.</p>
+        </div>
+        <div class="about-side">
+          <div>
+            <span class="label">Experience</span>
+            <ul class="timeline" aria-label="Experience">
+              <li><span class="yr">2024 – 2026</span><span>Product Manager, AI &amp; Data Products · Stefanini, assigned to Copel</span></li>
+              <li><span class="yr">2024</span><span>Product Owner · Minsait, Paraná State Government</span></li>
+              <li><span class="yr">2022 – 2024</span><span>Product Owner · Destaxa</span></li>
+              <li><span class="yr">2017 – 2021</span><span>Systems Analyst to Product Owner · Tefway</span></li>
+            </ul>
+          </div>
+          <div>
+            <span class="label">Education</span>
+            <ul class="timeline" aria-label="Education">
+              <li><span class="yr">2018 – 2020</span><span>Postgraduate degree in Agile Software Engineering · Universidade Positivo</span></li>
+              <li><span class="yr">2014 – 2017</span><span>Bachelor's in Information Systems · Centro Universitário Santa Cruz de Curitiba<br><span class="note">Academic Excellence Award as top student of the program</span></span></li>
+            </ul>
+          </div>
+          <div>
+            <span class="label">Certifications</span>
+            <ul class="timeline" aria-label="Certifications">
+              <li><span class="yr">2025</span><span>Product Master · PM3<br><span class="note">Product Management, Discovery, Analytics, Growth, Marketing and Leadership</span></span></li>
+              <li><span class="yr">2026</span><span>Product AI Specialist · PM3</span></li>
+              <li><span class="yr">Oracle</span><span>OCI Generative AI Professional</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="finale" id="contato-en" aria-labelledby="contato-title-en">
+    <div class="wrap">
+      <span class="label">Contact</span>
+      <h2 id="contato-title-en">Let's talk about <em>your next product.</em></h2>
+      <div class="contact-row">
+        <div class="email-chip">
+        <span class="addr" id="email-text-en">milenarosanovaes@gmail.com</span>
+        <button class="copy" id="copy-email-en" type="button" aria-label="Copy email" title="Copy email">
+          <svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg>
+          <svg class="i-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </button>
+      </div>
+        <a class="btn" href="https://www.linkedin.com/in/milena-rnovaes/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+      </div>
+      <span class="copy-status" id="copy-status-en" role="status" aria-live="polite"></span>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Milena Rosa Novaes · Product Manager</span>
+    <span>Curitiba, Brazil</span>
+  </div>
+</footer>
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Waffle grids
+  document.querySelectorAll('.waffle[data-on]').forEach(function (grid) {
+    var on = parseInt(grid.getAttribute('data-on'), 10) || 0, html = '';
+    for (var i = 0; i < 100; i++) html += i < on ? '<i></i>' : '<i class="m"></i>';
+    grid.innerHTML = html;
+  });
+
+  // Count readouts from "before" to "after" inside a container
+  function countUp(root) {
+    if (reduce) return;
+    root.querySelectorAll('.num[data-from]').forEach(function (el, idx) {
+      var from = +el.getAttribute('data-from'), to = +el.getAttribute('data-to');
+      var dur = 1300, delay = 250 + idx * 180, start = null;
+      el.textContent = from;
+      function step(t) {
+        if (start === null) start = t;
+        var p = Math.min(1, Math.max(0, (t - start - delay) / dur));
+        var e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(from + (to - from) * e);
+        if (p < 1) requestAnimationFrame(step); else el.textContent = to;
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  // Glow follows the pointer in each hero
+  if (!reduce) {
+    document.querySelectorAll('.hero').forEach(function (hero) {
+      hero.addEventListener('pointermove', function (e) {
+        var r = hero.getBoundingClientRect();
+        hero.style.setProperty('--x', (e.clientX - r.left) + 'px');
+        hero.style.setProperty('--y', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  // Reading progress
+  var bar = document.getElementById('progress');
+  function prog() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')';
+  }
+  window.addEventListener('scroll', prog, { passive: true });
+
+  // Copy e-mail (one chip per language)
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    var root = btn.closest('.lang-root'), chip = btn.closest('.email-chip');
+    var en = root.getAttribute('data-lang') === 'en';
+    var emailEl = root.querySelector('.addr'), status = root.querySelector('.copy-status'), timer;
+    function show(msg, ok) {
+      status.textContent = msg;
+      chip.classList.toggle('done', !!ok);
+      clearTimeout(timer);
+      timer = setTimeout(function () { status.textContent = ''; chip.classList.remove('done'); }, 2500);
+    }
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(emailEl);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      show(en ? 'Email selected. Press Ctrl+C to copy.' : 'E-mail selecionado. Use Ctrl+C para copiar.', false);
+    }
+    btn.addEventListener('click', function () {
+      try {
+        navigator.clipboard.writeText(emailEl.textContent).then(function () { show(en ? 'Email copied' : 'E-mail copiado', true); }, selectIt);
+      } catch (e) { selectIt(); }
+    });
+  });
+
+  // Language toggle
+  var buttons = document.querySelectorAll('.lang button');
+  function setLang(lang, save) {
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      if (el.classList.contains('lang-root') || el.tagName === 'NAV') el.hidden = el.getAttribute('data-lang') !== lang;
+    });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-set') === lang ? 'true' : 'false'); });
+    document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+    if (save) { try { localStorage.setItem('portfolio-lang', lang); } catch (e) {} }
+    countUp(document.querySelector('.lang-root[data-lang="' + lang + '"]'));
+    prog();
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-set'), true); window.scrollTo(0, 0); });
+  });
+  var initial = 'pt';
+  if (location.hash === '#en' || /-en$/.test(location.hash)) initial = 'en';
+  else { try { initial = localStorage.getItem('portfolio-lang') || 'pt'; } catch (e) {} }
+  setLang(initial === 'en' ? 'en' : 'pt', false);
+})();
+</script>
+<script>
+(function () {
+  var root = document.documentElement, btn = document.getElementById('theme-toggle');
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
+  function effective() {
+    var t = root.getAttribute('data-theme');
+    if (t === 'light' || t === 'dark') return t;
+    return mq && mq.matches ? 'light' : 'dark';
+  }
+  function paint() { btn.classList.toggle('is-light', effective() === 'light'); }
+  try { var saved = localStorage.getItem('portfolio-theme'); if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved); } catch (e) {}
+  paint();
+  if (mq && mq.addEventListener) mq.addEventListener('change', paint);
+  btn.addEventListener('click', function () {
+    var next = effective() === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+    paint();
+  });
+})();
+</script>
+<script>
+(function () {
+  var btn = document.getElementById('menu-btn'), panel = document.getElementById('mobile-menu');
+  function setOpen(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panel.hidden = !open;
+  }
+  btn.addEventListener('click', function () { setOpen(panel.hidden); });
+  panel.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  document.addEventListener('click', function (e) { if (!panel.hidden && !e.target.closest('.top')) setOpen(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 640) setOpen(false); });
+})();
+</script>
+
+</body>
+</html>
