@@ -4,4 +4,4 @@ Portfólio de Product Manager: cases de IA, dados e pagamentos, em português e 
 
 Site estático (um `index.html` e a pasta `img/`), publicado pelo GitHub Pages.
 
-Para publicar: **Settings → Pages → Branch: `main` / `(root)` → Save**.
+
